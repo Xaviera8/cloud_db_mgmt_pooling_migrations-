@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>MySQL Patient Table</title>
+</head>
+
+<body class="bg-white">
+
+    <header class="bg-blue-600 text-white p-4">
+        <h1 class="text-2xl">MySQL Patient Table</h1>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="/" class="hover:underline">Home</a></li>
+                <li><a href="/Medical Record" class="hover:underline">Medical Records</a></li>
+                <li><a href="/Patient" class="hover:underline">Patient Table</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="p-4">
+        <h1 class="text-2xl">This is a MySQL Patient Table</h1>
+        <table class="border-collapse border border-gray-400">
+            <thead>
+                <tr class="bg-blue-200">
+                   <th class="border border-gray-400 p-2">ID #</th>
+                   <th class="border border-gray-400 p-2">First Name</th>
+                   <th class="border border-gray-400 p-2">Last Name</th>
+                   <th class="border border-gray-400 p-2">Date of Birth</th>
+                   <th class="border border-gray-400 p-2">Gender</th>
+                   <th class="border border-gray-400 p-2">Contact Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patients in data1 %}
+                <tr class="bg-white">
+                    <td class="border border-gray-400 p-2">{{patients.id}}</td>
+                    <td class="border border-gray-400 p-2">{{patients.first_name}}</td>
+                    <td class="border border-gray-400 p-2">{{patients.last_name}}</td>
+                    <td class="border border-gray-400 p-2">{{patients.date_of_birth}}</td>
+                    <td class="border border-gray-400 p-2">{{patients.gender}}</td>
+                    <td class="border border-gray-400 p-2">{{patients.contact_number}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 mt-6">
+        <p>© 2023 My Healthcare App. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>
